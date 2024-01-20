@@ -16,7 +16,7 @@ class App extends Component {
       this.setState({ cartItems: JSON.parse(localStorage.getItem('cartItems')) });
     }
 
-    fetch('http://localhost:8000/products').then(res => res.json())
+    fetch('http://localhost:3000/products').then(res => res.json())
       .catch(err => fetch('db.json').then(res => res.json()).then(data => data.products))
       .then(data => {
         this.setState({ products: data });
